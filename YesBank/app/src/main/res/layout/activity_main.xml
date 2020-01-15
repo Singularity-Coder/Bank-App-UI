@@ -6,21 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:scaleY="1.2"
+        android:scaleX="1.2"
+        android:src="@drawable/yesbanklogo"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager_auth_intro"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/lin_lay_dots"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
 
     <LinearLayout
         android:id="@+id/lin_lay_dots"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:animateLayoutChanges="true"
         android:gravity="center"
@@ -48,44 +59,21 @@
             android:layout_margin="4dp"
             android:background="@drawable/ic_dot_green" />
 
-        <View
-            android:id="@+id/indicator4"
-            android:layout_width="10dp"
-            android:layout_height="10dp"
-            android:layout_margin="4dp"
-            android:background="@drawable/ic_dot_green" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/lay_round_button"
         android:backgroundTint="@color/colorPrimary"
         android:elevation="10dp"
+        android:onClick="login"
         android:text="Login"
-        android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryLighter"
-        android:textSize="@dimen/text_size_content"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_signup" />
-
-    <Button
-        android:id="@+id/btn_signup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/lay_round_button"
-        android:backgroundTint="@color/colorPrimary"
-        android:elevation="10dp"
-        android:text="Sign Up"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimaryLighter"
         android:textSize="@dimen/text_size_content"

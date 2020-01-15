@@ -6,4 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".LogInActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg2" />
+
+    <ImageView
+        android:id="@+id/poster_slider_fade"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:contentDescription="Image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/lin_lay_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingStart="45dp"
+        android:paddingEnd="45dp">
+
+        <ImageView
+            android:layout_width="73dp"
+            android:layout_height="73dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorWhite"
+            android:elevation="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/yesbank" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="YES Bank"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tv_login_type_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="India bole YES"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/con_lay_imput_fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <com.singularitycoder.yesbank.CustomEditText
+                android:id="@+id/et_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.5"
+                android:background="@drawable/lay_round_button"
+                android:digits="qwertyuiopasdfghjklzxcvbnm 1234567890 QWERTYUIOPASDFGHJKLZXCVBNM .@-_"
+                android:hint="Type Customer ID"
+                android:inputType="textEmailAddress"
+                android:maxLength="60"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="15dp"
+                android:scrollHorizontally="true"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.singularitycoder.yesbank.CustomEditText
+                android:id="@+id/et_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.5"
+                android:background="@drawable/lay_round_button"
+                android:digits="qwertyuiopasdfghjklzxcvbnm 1234567890 QWERTYUIOPASDFGHJKLZXCVBNM .,#@-_+!?;':*"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="Type Password"
+                android:inputType="textPassword"
+                android:maxLength="60"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="70dp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textColor="@color/colorBlack"
+                app:layout_constraintTop_toBottomOf="@+id/et_login_email" />
+
+            <TextView
+                android:id="@+id/tv_show_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:maxLines="2"
+                android:paddingTop="15dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="15dp"
+                android:text="SHOW"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/et_login_password"
+                app:layout_constraintEnd_toEndOf="@+id/et_login_password"
+                app:layout_constraintTop_toTopOf="@+id/et_login_password" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/lay_round_button"
+            android:backgroundTint="@color/colorPrimary"
+            android:elevation="10dp"
+            android:text="Login"
+            android:onClick="home"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimaryLighter"
+            android:textSize="@dimen/text_size_content"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_login_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="15dp"
+            android:text="Login Help"
+            android:textColor="@color/colorPrimaryLight"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
