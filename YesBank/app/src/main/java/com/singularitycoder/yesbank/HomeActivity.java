@@ -163,6 +163,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         ImageView imgProfile;
         ImageView imgNotifications;
 
+        RecyclerView recyclerView;
+        HorizontalAdapter horizontalAdapter;
+        RecyclerView.LayoutManager layoutManager;
+        ArrayList<HorizontalItem> list;
+
         public HomeFragment() {
         }
 
@@ -190,6 +195,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             viewPager = view.findViewById(R.id.viewpager);
             imgProfile = view.findViewById(R.id.img_profile);
             imgNotifications = view.findViewById(R.id.img_notifications);
+            recyclerView = view.findViewById(R.id.recycler_favourites);
 
             indicator1 = view.findViewById(R.id.indicator1);
             indicator2 = view.findViewById(R.id.indicator2);
@@ -211,7 +217,25 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                     .replace(R.id.fragment_container, new ProfileFragment())
                     .addToBackStack("HomeDriverFragment")
                     .commit());
+
+            setUpRecyclerView();
             return view;
+        }
+
+        private void setUpRecyclerView() {
+            list = new ArrayList<>();
+            list.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+
+            recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, true));
+            horizontalAdapter = new HorizontalAdapter(list, getActivity());
+            horizontalAdapter.setHasStableIds(true);
+            recyclerView.setAdapter(horizontalAdapter);
         }
 
         private static class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -304,12 +328,21 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
             }
         }
 
-
     }
 
     public static class PayFragment extends Fragment {
 
         private static final String TAG = "PayFragment";
+        private Toolbar toolbar;
+
+        RecyclerView recyclerView1;
+        RecyclerView recyclerView2;
+        RecyclerView recyclerView3;
+        HorizontalAdapter horizontalAdapter;
+        RecyclerView.LayoutManager layoutManager;
+        ArrayList<HorizontalItem> list1;
+        ArrayList<HorizontalItem> list2;
+        ArrayList<HorizontalItem> list3;
 
         public PayFragment() {
         }
@@ -334,7 +367,72 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_pay, container, false);
+            recyclerView1 = view.findViewById(R.id.recycler_pay_bills);
+            recyclerView2 = view.findViewById(R.id.recycler_recharge);
+            recyclerView3 = view.findViewById(R.id.recycler_travel);
+            initToolBar(view);
+            setUpRecyclerView1();
+            setUpRecyclerView2();
+            setUpRecyclerView3();
             return view;
+        }
+
+        private void setUpRecyclerView1() {
+            list1 = new ArrayList<>();
+            list1.add(new HorizontalItem(R.drawable.ic_qr_code, "Scan QR Code", R.color.colorPrimaryLightest, R.color.colorPrimaryLightest, R.color.colorPrimary));
+            list1.add(new HorizontalItem(R.drawable.ic_attach_money_24px, "UPI Payment", R.color.colorPrimaryLightest, R.color.colorPrimaryLightest, R.color.colorPrimary));
+            list1.add(new HorizontalItem(R.drawable.ic_money_24px, "Transfer Money", R.color.colorPrimaryLightest, R.color.colorPrimaryLightest, R.color.colorPrimary));
+            list1.add(new HorizontalItem(R.drawable.ic_payment_24px, "Card Payment", R.color.colorPrimaryLightest, R.color.colorPrimaryLightest, R.color.colorPrimary));
+            list1.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimaryLightest, R.color.colorPrimaryLightest, R.color.colorPrimary));
+            list1.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimaryLightest, R.color.colorPrimaryLightest, R.color.colorPrimary));
+
+            recyclerView1.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+            horizontalAdapter = new HorizontalAdapter(list1, getActivity());
+            horizontalAdapter.setHasStableIds(true);
+            recyclerView1.setAdapter(horizontalAdapter);
+        }
+
+        private void setUpRecyclerView2() {
+            list2 = new ArrayList<>();
+            list2.add(new HorizontalItem(R.drawable.ic_mobile_friendly_24px, "Mobile Prepaid", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list2.add(new HorizontalItem(R.drawable.ic_settings_input_antenna_24px, "DTH", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list2.add(new HorizontalItem(R.drawable.ic_local_taxi_24px, "FasTag", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list2.add(new HorizontalItem(R.drawable.ic_tram_24px, "Metro", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list2.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list2.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list2.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+
+            recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+            horizontalAdapter = new HorizontalAdapter(list2, getActivity());
+            horizontalAdapter.setHasStableIds(true);
+            recyclerView2.setAdapter(horizontalAdapter);
+        }
+
+        private void setUpRecyclerView3() {
+            list3 = new ArrayList<>();
+            list3.add(new HorizontalItem(R.drawable.ic_flight_24px, "Flight Tickets", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list3.add(new HorizontalItem(R.drawable.ic_location_city_24px, "Hotels", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list3.add(new HorizontalItem(R.drawable.ic_train_24px, "Train Tickets", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list3.add(new HorizontalItem(R.drawable.ic_directions_bus_24px, "Bus Tickets", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list3.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list3.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+            list3.add(new HorizontalItem(R.drawable.ic_account, "Scan", R.color.colorPrimary, R.color.colorBlack, R.color.colorWhite));
+
+            recyclerView3.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+            horizontalAdapter = new HorizontalAdapter(list3, getActivity());
+            horizontalAdapter.setHasStableIds(true);
+            recyclerView3.setAdapter(horizontalAdapter);
+        }
+
+        private void initToolBar(View view) {
+            toolbar = view.findViewById(R.id.toolbar);
+            ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+            if (((AppCompatActivity) getActivity()) != null) {
+                // For back navigation button use this
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                ((AppCompatActivity) getActivity()).setTitle("Pay");
+//            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
+            }
         }
     }
 

@@ -7,6 +7,7 @@
     <color name="colorAccentLight">#EC407A</color>
     <color name="colorPrimaryDarker">#006064</color>
     <color name="colorPrimaryLighter">#B2C7F2</color>
+    <color name="colorPrimaryLightest">#DFE7FF</color>
     <color name="colorAccentDark">#AD1457</color>
 
     <color name="colorBlack">#383838</color>
