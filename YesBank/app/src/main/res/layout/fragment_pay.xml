@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite">
+    android:background="@color/bg_gray">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/con_lay_home"
@@ -46,6 +46,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingStart="15dp"
+                        android:background="@color/bg_gray"
                         android:paddingBottom="15dp">
 
                         <ImageView
@@ -97,6 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingStart="15dp"
+                        android:background="@color/bg_gray"
                         android:paddingBottom="15dp">
 
                         <ImageView
@@ -148,6 +150,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingStart="15dp"
+                        android:background="@color/bg_gray"
                         android:paddingBottom="15dp">
 
                         <ImageView

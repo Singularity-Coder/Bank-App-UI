@@ -439,6 +439,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     public static class SaveFragment extends Fragment {
 
         private static final String TAG = "SaveFragment";
+        private Toolbar toolbar;
 
         public SaveFragment() {
         }
@@ -463,7 +464,19 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_save, container, false);
+            initToolBar(view);
             return view;
+        }
+
+        private void initToolBar(View view) {
+            toolbar = view.findViewById(R.id.toolbar);
+            ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+            if (((AppCompatActivity) getActivity()) != null) {
+                // For back navigation button use this
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                ((AppCompatActivity) getActivity()).setTitle("Save");
+//            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_black_24dp);
+            }
         }
     }
 
