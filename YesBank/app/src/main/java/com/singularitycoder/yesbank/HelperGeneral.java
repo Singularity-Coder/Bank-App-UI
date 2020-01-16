@@ -98,7 +98,7 @@ public class HelperGeneral {
     public static void glideImage(Context context, String imgUrl, ImageView imageView) {
         RequestOptions requestOptions = new RequestOptions()
                 .placeholder(R.color.bg_gray)
-                .error(R.mipmap.ic_launcher) //in case of any glide exception or not able to download then this image will be appear . if you won't mention this error() then nothing to worry placeHolder image would be remain as it is.
+                .error(R.drawable.profilepic) //in case of any glide exception or not able to download then this image will be appear . if you won't mention this error() then nothing to worry placeHolder image would be remain as it is.
                 .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC); //using to load into cache then second time it will load fast.
 
         Glide.with(context)
