@@ -34,20 +34,19 @@
                     android:id="@+id/card_pay_bills"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
                     android:clipChildren="true"
                     android:clipToPadding="true"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="2dp"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
                     app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="15dp">
+                        android:paddingStart="15dp"
+                        android:paddingBottom="15dp">
 
                         <ImageView
                             android:id="@+id/img_pay_bills"
@@ -86,20 +85,19 @@
                     android:id="@+id/card_recharge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
                     android:clipChildren="true"
                     android:clipToPadding="true"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="2dp"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
                     app:layout_constraintTop_toBottomOf="@+id/card_pay_bills">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="15dp">
+                        android:paddingStart="15dp"
+                        android:paddingBottom="15dp">
 
                         <ImageView
                             android:id="@+id/img_recharge"
@@ -138,20 +136,19 @@
                     android:id="@+id/card_travel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
                     android:clipChildren="true"
                     android:clipToPadding="true"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="2dp"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
                     app:layout_constraintTop_toBottomOf="@+id/card_recharge">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:padding="15dp">
+                        android:paddingStart="15dp"
+                        android:paddingBottom="15dp">
 
                         <ImageView
                             android:id="@+id/img_travel"
