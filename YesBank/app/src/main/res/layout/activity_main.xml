@@ -43,21 +43,21 @@
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_margin="4dp"
-            android:background="@drawable/ic_dot_green" />
+            android:background="@drawable/ic_dot_blue" />
 
         <View
             android:id="@+id/indicator2"
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_margin="4dp"
-            android:background="@drawable/ic_dot_green" />
+            android:background="@drawable/ic_dot_blue" />
 
         <View
             android:id="@+id/indicator3"
             android:layout_width="10dp"
             android:layout_height="10dp"
             android:layout_margin="4dp"
-            android:background="@drawable/ic_dot_green" />
+            android:background="@drawable/ic_dot_blue" />
 
     </LinearLayout>
 
@@ -65,9 +65,9 @@
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/lay_round_button"
         android:backgroundTint="@color/colorPrimary"

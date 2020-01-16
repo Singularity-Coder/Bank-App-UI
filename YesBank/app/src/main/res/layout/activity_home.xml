@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         app:itemHorizontalTranslationEnabled="true"
         android:elevation="10dp"
-        android:background="@color/colorWhite"
+        android:background="@drawable/lay_round_bottom_nav"
         app:elevation="10dp"
         app:itemIconTint="@drawable/bottom_nav_color_states"
         app:itemTextColor="@drawable/bottom_nav_color_states"

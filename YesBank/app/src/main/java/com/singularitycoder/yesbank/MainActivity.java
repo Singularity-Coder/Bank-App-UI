@@ -83,17 +83,17 @@ public class MainActivity extends AppCompatActivity {
         switch (position) {
             case 0:
                 indicator1.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot));
-                indicator2.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_green));
-                indicator3.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_green));
+                indicator2.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_blue));
+                indicator3.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_blue));
                 break;
             case 1:
-                indicator1.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_green));
+                indicator1.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_blue));
                 indicator2.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot));
-                indicator3.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_green));
+                indicator3.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_blue));
                 break;
             case 2:
-                indicator1.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_green));
-                indicator2.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_green));
+                indicator1.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_blue));
+                indicator2.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot_light_blue));
                 indicator3.setBackground(ContextCompat.getDrawable(this, R.drawable.ic_dot));
                 break;
         }
